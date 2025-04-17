@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+/* General Reset and Base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #333333; /* neutral dark gray for light mode */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section {
+  scroll-margin-top: 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Buttons */
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-outline-primary {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333333; /* ensure visibility */
+}
+
+/* Theme Support */
+body.bg-dark {
+  background-color: #121212 !important;
+  color: #e0e0e0;
+}
+
+body.bg-dark h1,
+body.bg-dark h2,
+body.bg-dark h3,
+body.bg-dark h4,
+body.bg-dark h5,
+body.bg-dark h6,
+body.bg-dark .card-title {
+  color: #f1f1f1; /* brighter for dark mode */
+}
+
+body.bg-dark .card,
+body.bg-dark .accordion-button {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+body.bg-dark .accordion-body,
+body.bg-dark .form-control,
+body.bg-dark .form-label {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Form */
+.form-control {
+  border-radius: 0.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #333333;
+}
+
+body.bg-dark .form-label {
+  color: #f1f1f1;
+}
+
+/* Section spacing */
+section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Utility */
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Hero Specific */
+.hero-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 30px 15px;
 }
 
-.App-link {
-  color: #61dafb;
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-buttons .btn {
+  margin-right: 10px;
+  margin-top: 15px;
+}
+
+/* Accordion hover shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+.accordion-item:hover {
+  animation: shake 0.4s ease-in-out;
 }

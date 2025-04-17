@@ -1,0 +1,78 @@
+[
+    {
+      "name": "accenture",
+      "items": [
+        {
+          "title": "Employee Connect Portal (Jul 2021 – Nov 2021)",
+          "points": [
+            "Developed responsive, data-driven single-page components using ReactJS, HTML, CSS, and JavaScript.",
+            "Collaborated with the SharePoint team for integration, delivering modular UI components handling large datasets.",
+            "Utilized Material UI to build custom tables, accordions, and typography elements with React Hooks."
+          ]
+        },
+        {
+          "title": "SkillNavigator (Nov 2021 – Apr 2022)",
+          "points": [
+            "Built a web tool for managing and tracking user skillset trainings, with complex components for certification scheduling and validation.",
+            "Implemented date/time slot logic for multiple users; developed custom Material UI forms using TypeScript, JavaScript, and HTML5.",
+            "Collaborated with the design team on UI/UX planning and mentored junior developers for guidance and support."
+          ]
+        },
+        {
+          "title": "B2B Activity Dashboard (May 2022 – Nov 2022)",
+          "points": [
+            "Developed a custom B2B dashboard application from scratch using React, React Hooks, and Redux for state management, ensuring seamless data flow and interaction.",
+            "Implemented Redux store manipulation and API call management to efficiently handle large-scale data and real-time updates.",
+            "Conducted thorough testing with Enzyme and ensured code quality with Jest."
+          ]
+        },
+        {
+          "title": "ToolTip (Feb 2023 – Aug 2023)",
+          "points": [
+            "Collaborated on a large-scale migration project, upgrading legacy systems to modern platforms.",
+            "Built fully custom, reusable UI components and a responsive navigation bar using vanilla JavaScript.",
+            "Implemented full accessibility support across the application."
+          ]
+        },
+        {
+          "title": "SharePoint Front-End Developer – Avanade (March 2024 – Present)",
+          "points": [
+            "Led the development of React-based components and HTML replicas of preexisting websites.",
+            "Enhanced functionality and UX for Microsoft migration projects.",
+            "Implemented new features and styling with cross-platform support."
+          ]
+        }
+      ]
+    },
+    {
+        "name": "infosys",
+        "items": [
+          {
+            "title": "Runner Redesign – Infosys (Apple Internal Project) Feb 2020 – Aug 2020",
+            "points": [
+              "Built dynamic user module with config-driven forms, real-time timezone updates, and interactive calendar tied to country-specific Apple store data.",
+              "Developed frontend with HTML/CSS, UX enhancements (e.g. running bar chart), integrated API/GSF service calls, and handled production issues.",
+              "Contributed to unit testing (Jest, Enzyme), documentation, and overall code quality improvements."
+            ]
+          },
+          {
+            "title": "CRM Activity Dashboard – Infosys (Apple Internal Project) Jul 2020 – Sep 2020",
+            "points": [
+              "Developed key dashboard modules with timezone-based dropdown filters and D3.js interactive bar graphs for product sales tracking.",
+              "Implemented features like bookmarks, download/upload (drag & drop), and integrated APIs using Talend; tested with Jest & Enzyme.",
+              "Managed production deployment, bug fixes, documentation, and handled frontend with HTML/CSS."
+            ]
+          },
+          {
+            "title": "ForteKnox – Infosys (Apple Internal Project) Sep 2020 – Feb 2021",
+            "points": [
+              "Developed internal support request tabs within the CST portal for Apple employees, automating task-specific workflows.",
+              "Integrated Context API for state management and handled logic across modules.",
+              "Implemented animated UI components using CSS for enhanced user experience."
+            ]
+          }
+        ]
+      }
+      
+  ]
+  
