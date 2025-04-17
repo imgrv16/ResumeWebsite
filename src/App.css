@@ -1,12 +1,13 @@
 /* General Reset and Base */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Raleway', sans-serif;
   transition: background-color 0.3s, color 0.3s;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: 600;
-  color: #333333; /* neutral dark gray for light mode */
+  color: #333333;
 }
 
 section {
@@ -29,22 +30,30 @@ section {
   color: #fff;
 }
 
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
 /* Cards */
 .card {
   border: none;
   border-radius: 0.75rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .card-title {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #333333; /* ensure visibility */
+  color: #333333;
 }
 
 /* Theme Support */
@@ -60,19 +69,20 @@ body.bg-dark h4,
 body.bg-dark h5,
 body.bg-dark h6,
 body.bg-dark .card-title {
-  color: #f1f1f1; /* brighter for dark mode */
+  color: #f1f1f1;
 }
 
 body.bg-dark .card,
 body.bg-dark .accordion-button {
-  background-color: #1e1e1e;
+  background-color: rgba(40, 40, 40, 0.6);
   color: #fff;
+  backdrop-filter: blur(10px);
 }
 
 body.bg-dark .accordion-body,
 body.bg-dark .form-control,
 body.bg-dark .form-label {
-  background-color: #1e1e1e;
+  background-color: rgba(40, 40, 40, 0.4);
   color: #e0e0e0;
 }
 
@@ -153,3 +163,138 @@ section {
 .accordion-item:hover {
   animation: shake 0.4s ease-in-out;
 }
+
+/* Glass effect container */
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 50px;
+}
+
+body.bg-dark .glass-card {
+  background: rgba(50, 50, 50, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- ProjectCard Overlay Styles --- */
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-text {
+  z-index: 2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Overlay Text Styling */
+.overlay-text h5,
+.overlay-text small {
+  color: #ffffff !important;
+}
+.overlay-text {
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.project-card:hover .overlay-text h5 {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+body.bg-dark .modal-content {
+  background-color: rgba(30, 30, 30, 0.85);
+  color: #fff;
+}
+
+.modal-content {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+}
+
+body.bg-dark .modal-content {
+  background-color: rgba(30, 30, 30, 0.85);
+  color: #fff;
+}
+
+.edu-card {
+  transition: transform 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: scale(1.02);
+}
+.edu-card h5 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+body.bg-dark .navbar-custom {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.navbar-custom {
+  background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1920&q=80');
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.bg-dark .navbar-custom {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Soft scroll shadow */
+.navbar-custom.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.navbar-custom .nav-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.footer-outro {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.bg-dark .footer-outro {
+  background: rgba(20, 20, 20, 0.9);
+}
+
+.footer-icon {
+  color: #ffffff;
+  margin: 0 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #0d6efd;
+  transform: translateY(-4px) scale(1.1);
+}
+
+.footer-outro h5 {
+  color: #ffffff !important;
+  margin-top: 1rem;
+}
+

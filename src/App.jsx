@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,10 +12,30 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
-import Tests from "./components/Tests";
+import Footer from "./components/Footer";
+
+// import Tests from "./components/Tests";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
+
+
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+
+
+// useEffect(() => {
+//   AOS.init({ duration: 1000 });
+// }, []);
+
+  
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -38,6 +58,7 @@ function App() {
         <Projects />
         <Education />
         <Contact />
+        <Footer />
       </main>
     </Router>
   );

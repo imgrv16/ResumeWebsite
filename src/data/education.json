@@ -1,0 +1,29 @@
+[
+    {
+      "id": "soa",
+      "institution": "SOA University (Siksha 'O' Anusandhan)",
+      "degree": "B.Tech in Computer Science",
+      "duration": "2016 – 2020",
+      "images": [
+        "/assets/SOA.jpg",
+        "/assets/SOA2.jpg",
+        "/assets/SOA3.jpg"
+      ],
+      "logo": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.3896107890853!2d85.83170207487091!3d20.296058010723206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909ce6375cfc7%3A0x57c66a861a98e6e9!2sSiksha%20%27O%27%20Anusandhan%20University!5e0!3m2!1sen!2sin!4v1682102392022!5m2!1sen!2sin"
+    },
+    {
+      "id": "chinmaya",
+      "institution": "Chinmaya Vidyalaya",
+      "degree": "CBSE - Class X & XII",
+      "duration": "2004 – 2015",
+      "images": [
+        "/assets/cv1.jpg",
+        "/assets/cv2.jpg",
+        "/assets/cv3.jpg"
+      ],
+      "logo": "https://cdn-icons-png.flaticon.com/512/1048/1048943.png", 
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28787.808240361334!2d86.1284876607872!3d23.673239597015436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6c1d4a2dfe933%3A0x8f1eb0159a4f8c2e!2sChinmaya%20Vidyalaya%2C%20Bokaro%20Steel%20City!5e0!3m2!1sen!2sin!4v1682103253222!5m2!1sen!2sin"
+    }
+  ]
+  

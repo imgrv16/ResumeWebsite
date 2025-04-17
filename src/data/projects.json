@@ -1,0 +1,67 @@
+[
+    {
+      "title": "Employee Connect Portal",
+      "company": "Accenture",
+      "period": "Jul 2021 – Nov 2021",
+      "description": "Responsive portal for employees to access tools, announcements, and integrated systems.",
+      "image": "https://picsum.photos/seed/EmployeeConnect/1600/900",
+      "summary": "Spearheaded the development of a dynamic Employee Connect Portal, designed to unify organizational communication and internal tools into a single intuitive interface. Built using ReactJS and Material UI, the portal seamlessly integrated with SharePoint, allowing teams to manage datasets and user information with ease. I developed modular components with real-time rendering logic, delivering a responsive experience across devices. This initiative dramatically improved engagement metrics and internal adoption of enterprise resources. The portal's foundation supported rapid deployment of new features without disrupting the ecosystem, creating a long-term asset for cross-departmental productivity."
+    },
+    {
+      "title": "SkillNavigator",
+      "company": "Accenture",
+      "period": "Nov 2021 – Apr 2022",
+      "description": "Web tool for tracking user skillset trainings and managing certification scheduling.",
+      "image": "https://picsum.photos/seed/SkillNavigator/1600/900",
+      "summary": "Designed and developed SkillNavigator, a comprehensive web-based solution for tracking and managing user certifications and training progress across departments. Leveraging React with TypeScript and Material UI, I engineered a dynamic interface that supported complex scheduling logic and real-time validation of user skill data. The platform empowered users to register, monitor progress, and receive automated feedback on their training pathways, dramatically improving compliance and readiness metrics. I also introduced custom form components and seamless time-slot selection tools, ensuring a fluid UX even at scale. My role extended into mentoring junior devs and refining UX flows in collaboration with the design team."
+    },
+    {
+      "title": "B2B Activity Dashboard",
+      "company": "Accenture",
+      "period": "May 2022 – Nov 2022",
+      "description": "Custom dashboard for business analytics with API management and Redux-based state flow.",
+      "image": "https://picsum.photos/seed/B2BDashboard/1600/900",
+      "summary": "Architected a robust B2B Activity Dashboard from the ground up using React, Redux, and Hooks, tailored to visualize real-time analytics and transactional data for external stakeholders. Focused on building highly customizable charts, filters, and report modules, I ensured optimal performance through deep Redux integration and efficient API data pipelines. The solution replaced legacy dashboards, reduced load times by 60%, and added traceable user interaction logs. With full test coverage using Jest and Enzyme, I delivered a battle-tested product ready for enterprise-scale reporting."
+    },
+    {
+      "title": "ToolTip",
+      "company": "Accenture",
+      "period": "Feb 2023 – Aug 2023",
+      "description": "A SharePoint migration project with accessible and reusable UI component system.",
+      "image": "https://picsum.photos/seed/TooltipApp/1600/900",
+      "summary": "Led front-end development for ToolTip, a large-scale migration project designed to upgrade legacy SharePoint platforms into modern web interfaces. I engineered a full suite of reusable UI components using vanilla JavaScript, HTML, and CSS—aligned pixel-perfectly with the UX team’s design system. Beyond aesthetic parity, the build prioritized WCAG 2.1 accessibility compliance, allowing universal usability across assistive technologies. My role focused heavily on semantic structuring, responsive grid layouts, and component reusability, helping the project transition from monolithic structure to a modular, scalable solution."
+    },
+    {
+      "title": "SharePoint Front-End Developer",
+      "company": "Accenture / Avanade",
+      "period": "March 2024 – Present",
+      "description": "Frontend role involving development of React-based replicas and enhancements of legacy sites.",
+      "image": "https://picsum.photos/seed/SharePointFE/1600/900",
+      "summary": "As lead SharePoint front-end developer, I revitalized static enterprise sites by replicating them with fully responsive, React-based components. Working on Microsoft-driven migration projects under Avanade, I rebuilt core UIs with semantic markup, modular architecture, and performance-optimized rendering logic. I collaborated closely with backend teams to ensure seamless API integration and user experience continuity. I also optimized for accessibility and SEO, ensuring the React replicas not only matched the original content but improved performance, maintainability, and UX at every layer."
+    },
+    {
+      "title": "Runner Redesign",
+      "company": "Infosys",
+      "period": "Feb 2020 – Aug 2020",
+      "description": "Internal tool redesign for Apple to manage store-specific data and timezone logic.",
+      "image": "https://picsum.photos/seed/RunnerRedesign/1600/900",
+      "summary": "Redesigned Apple's internal Runner module as part of Infosys’ digital transformation team. Built intelligent, config-driven forms capable of handling timezone logic and calendar dependencies tied to Apple Store data worldwide. I delivered a modular UI built with HTML, CSS, and JavaScript, integrated with GSF services and REST APIs. The redesign enabled faster updates, reduced human error in scheduling, and introduced a layer of interactivity never present in the legacy tool. I also handled production issues and testing through Jest and Enzyme to ensure reliability at launch."
+    },
+    {
+      "title": "CRM Activity Dashboard",
+      "company": "Infosys",
+      "period": "Jul 2020 – Sep 2020",
+      "description": "Developed dashboard modules with D3.js and Talend API integration, plus download/upload features.",
+      "image": "https://picsum.photos/seed/CRMdashboard/1600/900",
+      "summary": "Engineered a highly interactive CRM dashboard for Apple’s internal ecosystem, visualizing dynamic sales and engagement data using D3.js. The dashboard featured timezone-sensitive filters, drill-down bar charts, and cross-functional modules integrated with Talend APIs. I implemented core features such as bookmarkable states, drag-and-drop file handling, and real-time metrics with responsive UI elements. This initiative not only streamlined analytics workflows but also enhanced data transparency for global teams. Every pixel and interaction was optimized for precision, delivering a robust tool for executive insights and field operations alike."
+    },
+    {
+      "title": "ForteKnox",
+      "company": "Infosys",
+      "period": "Sep 2020 – Feb 2021",
+      "description": "Internal request automation within Apple’s CST portal using React and Context API.",
+      "image": "https://picsum.photos/seed/ForteKnox/1600/900",
+      "summary": "Built ForteKnox, a smart automation layer for Apple’s CST support portal, aimed at streamlining internal service requests. The React-powered module used Context API for global state management and enabled conditional rendering across request types. I incorporated animated components, modal interactions, and API-driven logic to automate task-specific workflows, improving support resolution time and data traceability. The solution was robust, lightweight, and fully scalable across Apple's internal team portals."
+    }
+  ]
+  
