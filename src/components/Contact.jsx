@@ -1,119 +1,113 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
+import { FaEnvelope } from "react-icons/fa";
+import "./Contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
+  const [show, setShow] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("contactForm");
-    if (saved) {
-      setFormData(JSON.parse(saved));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (Object.keys(errors).length === 0) {
-      localStorage.setItem("contactForm", JSON.stringify(formData));
-    }
-  }, [formData, errors]);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = "Email is required";
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = "Invalid email format";
     }
-    if (!formData.message.trim()) newErrors.message = "Message is required.";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
     return newErrors;
-  };
-
-  const handleBlur = (e) => {
-    const { name } = e.target;
-    setTouched((prev) => ({ ...prev, [name]: true }));
-    setErrors(validate());
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (touched[name]) setErrors(validate());
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length === 0) {
+      localStorage.setItem("contactForm", JSON.stringify(formData));
+      setSubmitted(true);
+      setTimeout(() => {
+        setFormData({ name: "", email: "", message: "" });
+        setSubmitted(false);
+        handleClose();
+      }, 2000);
+    } else {
+      setErrors(validationErrors);
+    }
   };
 
   return (
-    <section id="contact" className="py-5 bg-light">
-      <div className="container">
-        <h2 className="text-center mb-4">Contact Me</h2>
-        <div
-          className="glass-card shadow p-4 mx-auto"
-          style={{ maxWidth: 600 }}
-          data-aos="fade-up"
-        >
-          <form noValidate>
-            <div className="mb-3">
-              <label className="form-label fw-semibold" htmlFor="name">Name</label>
-              <input
+    <>
+      {/* Icon Trigger */}
+      <div className="contact-icon" onClick={handleShow}>
+        <FaEnvelope size={70} className="icon-animate" />
+       
+      </div>
+
+      {/* Contact Modal */}
+      <Modal show={show} onHide={handleClose} centered backdrop="static" keyboard>
+        <Modal.Header closeButton>
+          <Modal.Title>Contact Me</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit} noValidate>
+            <Form.Group controlId="formName" className="mb-3">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
                 type="text"
-                className={`form-control ${errors.name ? "is-invalid" : ""}`}
-                id="name"
                 name="name"
+                placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Enter your name"
+                isInvalid={!!errors.name}
               />
-              {errors.name && <div className="invalid-feedback">{errors.name}</div>}
-            </div>
+              <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
+            </Form.Group>
 
-            <div className="mb-3">
-              <label className="form-label fw-semibold" htmlFor="email">Email</label>
-              <input
+            <Form.Group controlId="formEmail" className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
                 type="email"
-                className={`form-control ${errors.email ? "is-invalid" : ""}`}
-                id="email"
                 name="email"
+                placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Enter your email"
+                isInvalid={!!errors.email}
               />
-              {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-            </div>
+              <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
+            </Form.Group>
 
-            <div className="mb-3">
-              <label className="form-label fw-semibold" htmlFor="message">Message</label>
-              <textarea
-                className={`form-control ${errors.message ? "is-invalid" : ""}`}
-                id="message"
+            <Form.Group controlId="formMessage" className="mb-3">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                as="textarea"
                 name="message"
+                rows={4}
+                placeholder="Write your message"
                 value={formData.message}
                 onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Write your message..."
-                rows="5"
+                isInvalid={!!errors.message}
               />
-              {errors.message && <div className="invalid-feedback">{errors.message}</div>}
-            </div>
+              <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
+            </Form.Group>
 
-            <button
-              type="submit"
-              className="btn btn-primary w-100"
-              disabled={Object.keys(validate()).length > 0}
-              title="Send functionality disabled for demo"
-            >
-              Send (Disabled)
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+            <Button variant="primary" type="submit" disabled={submitted}>
+              {submitted ? "Message Sent!" : "Send"}
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
+    </>
   );
 };
 

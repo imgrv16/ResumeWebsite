@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 
-
 const CustomNavbar = ({ toggleTheme, isDark }) => {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
@@ -34,9 +33,6 @@ const CustomNavbar = ({ toggleTheme, isDark }) => {
       variant={isDark ? "dark" : "light"}
     >
       <Container>
-        {/* <Navbar.Brand href="#hero" className="fw-bold text-white">
-          Gaurav Anand
-        </Navbar.Brand> */}
         <motion.a
           href="#hero"
           className="navbar-brand fw-bold text-white"
@@ -52,11 +48,22 @@ const CustomNavbar = ({ toggleTheme, isDark }) => {
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
           <Nav className="ms-auto">
-            {["hero", "about", "skills", "projects", "education", "contact"].map((link) => (
+            {[
+              "hero",
+              "about",
+              "skills",
+              "projects",
+              "experience",
+              "education",
+              "contact",
+              "dashboard"
+            ].map((link) => (
               <Nav.Link
                 key={link}
                 href={`#${link}`}
-                className={`text-white mx-2 ${active === link ? "fw-bold border-bottom" : ""}`}
+                className={`text-white mx-2 ${
+                  active === link ? "fw-bold border-bottom" : ""
+                }`}
                 style={{ transition: "all 0.3s", position: "relative" }}
               >
                 {link.charAt(0).toUpperCase() + link.slice(1)}

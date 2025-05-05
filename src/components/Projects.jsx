@@ -19,12 +19,20 @@ const Projects = () => {
         );
 
   return (
-    <section id="projects" className="py-5 bg-light" data-aos="fade-up">
+    <section
+      id="projects"
+      className="py-5"
+      style={{
+        backgroundColor: "#f8f9fa",
+        borderTop: "2px solid #dee2e6",
+        borderBottom: "2px solid #dee2e6",
+      }}
+    >
       <div className="container">
-        <h2 className="mb-4">Projects</h2>
+        <h2 className="mb-4 text-center text-dark">Projects</h2>
 
         {/* Filter Buttons */}
-        <div className="mb-4 d-flex gap-2 flex-wrap">
+        <div className="mb-4 d-flex gap-2 flex-wrap justify-content-center">
           {["All", "Accenture", "Infosys"].map((label) => (
             <button
               key={label}
@@ -49,12 +57,26 @@ const Projects = () => {
           showStatus={false}
           renderArrowPrev={(onClickHandler, hasPrev, label) =>
             hasPrev && (
-              <button type="button" onClick={onClickHandler} title={label} style={arrowStyle("left")}>‹</button>
+              <button
+                type="button"
+                onClick={onClickHandler}
+                title={label}
+                style={arrowStyle("left")}
+              >
+                ‹
+              </button>
             )
           }
           renderArrowNext={(onClickHandler, hasNext, label) =>
             hasNext && (
-              <button type="button" onClick={onClickHandler} title={label} style={arrowStyle("right")}>›</button>
+              <button
+                type="button"
+                onClick={onClickHandler}
+                title={label}
+                style={arrowStyle("right")}
+              >
+                ›
+              </button>
             )
           }
         >

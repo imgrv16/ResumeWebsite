@@ -1,0 +1,55 @@
+[
+    {
+      "name": "React",
+      "iconClass": "fab fa-react",
+      "level": "Expert",
+      "levelPercent": 90,
+      "category": "Frontend",
+      "topSkill": true,
+      "tooltip": "6 years experience · Used in 20+ projects",
+      "tutorialLink": "https://reactjs.org/docs/getting-started.html",
+      "description": "React is a component-based JavaScript library developed by Facebook. It revolutionizes frontend development by allowing developers to build reusable, declarative UI components that update efficiently in response to data changes using a virtual DOM."
+    },
+    {
+      "name": "Redux",
+      "iconClass": "fab fa-js-square",
+      "level": "Advanced",
+      "levelPercent": 85,
+      "category": "State Management",
+      "topSkill": true,
+      "tooltip": "Expert in global state management",
+      "tutorialLink": "https://redux.js.org/introduction/getting-started",
+      "description": "Redux is a predictable state container for JavaScript applications. It centralizes application state in a single store and uses pure reducer functions, enabling consistent behavior across environments and easy debugging."
+    },
+    {
+      "name": "JavaScript",
+      "iconClass": "fab fa-js",
+      "level": "Expert",
+      "levelPercent": 95,
+      "category": "Frontend",
+      "topSkill": true,
+      "tooltip": "Mastered JS logic, async & OOP",
+      "tutorialLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "description": "JavaScript is the programming language of the web. It enables dynamic behavior, asynchronous operations, and interaction with the DOM, making websites engaging and interactive."
+    },
+    {
+      "name": "CSS",
+      "iconClass": "fab fa-css3-alt",
+      "level": "Advanced",
+      "levelPercent": 80,
+      "category": "Styling",
+      "tooltip": "Pro in Flexbox, Grid & responsive",
+      "tutorialLink": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "description": "CSS styles the visual presentation of web pages. It allows layout design, transitions, animations, and responsive behavior to deliver pixel-perfect UI experiences across devices."
+    },
+    {
+      "name": "Framer Motion",
+      "iconClass": "fas fa-wave-square",
+      "level": "Intermediate",
+      "levelPercent": 70,
+      "category": "Animation",
+      "tutorialLink": "https://www.framer.com/motion/",
+      "description": "Framer Motion is a production-ready motion library for React. It provides powerful declarative animation APIs for transitions, gestures, layout animations, and drag-and-drop features."
+    }
+  ]
+  

@@ -1,104 +1,79 @@
-import React, { useState, useEffect } from "react";
-import experienceData from "../data/experience.json";
-import Timeline from "./Timeline";
+import React from "react";
+import { Container, Accordion } from "react-bootstrap";
 
-function Experience() {
-  const [openSection, setOpenSection] = useState(null); // "accenture" | "infosys" | null
-  const [expandedTimeline, setExpandedTimeline] = useState(null);
-  const [experience, setExperience] = useState({
-    accenture: [],
-    infosys: [],
-  });
-
-  useEffect(() => {
-    const acc = experienceData.find((e) => e.name === "accenture");
-    const infy = experienceData.find((e) => e.name === "infosys");
-
-    setExperience({
-      accenture: acc?.items || [],
-      infosys: infy?.items || [],
-    });
-  }, []);
-
-  const toggleSection = (section) => {
-    setOpenSection((prev) => (prev === section ? null : section));
-    setExpandedTimeline(null); // close timeline when toggling sections
-  };
-
+const Experience = () => {
   return (
     <section id="experience" className="py-5 bg-white">
-      <div className="container">
-        <h2 className="mb-4">Experience</h2>
-        <div className="accordion" id="experienceAccordion">
+      <Container>
+        <h2 className="text-center mb-4">Project TimeLine</h2>
+        <Accordion defaultActiveKey="0" flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Infosys Experience</Accordion.Header>
+            <Accordion.Body>
+              <ul>
+                <li><strong>Runner Redesign –</strong> (Feb 2020 – Aug 2020)</li>
+                <ul>
+                  <li>Built dynamic user module with config-driven forms.</li>
+                  <li>Developed frontend with HTML/CSS and timezone logic.</li>
+                  <li>Handled API integration and production issues.</li>
+                </ul>
+                <li><strong>CRM Activity Dashboard –</strong> (Jul 2020 – Sep 2020)</li>
+                <ul>
+                  <li>Created dashboard with D3.js graphs and filters.</li>
+                  <li>Implemented upload/download features and Talend API.</li>
+                  <li>Managed testing, deployment, and documentation.</li>
+                </ul>
+                <li><strong>ForteKnox –</strong> (Sep 2020 – Feb 2021)</li>
+                <ul>
+                  <li>Automated workflows within CST portal for Apple.</li>
+                  <li>Used Context API for state management.</li>
+                  <li>Designed animated UI for enhanced UX.</li>
+                </ul>
+              </ul>
+            </Accordion.Body>
+          </Accordion.Item>
 
-          {/* Accenture Accordion */}
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="headingOne">
-              <button
-                className={`accordion-button ${openSection === "accenture" ? "" : "collapsed"}`}
-                type="button"
-                onClick={() => toggleSection("accenture")}
-              >
-                Accenture – Sr. Application Development Analyst
-              </button>
-            </h2>
-            <div className={`accordion-collapse collapse ${openSection === "accenture" ? "show" : ""}`}>
-              <div className="accordion-body">
-                <button
-                  className="btn btn-sm btn-outline-primary mb-3"
-                  onClick={() =>
-                    setExpandedTimeline(
-                      expandedTimeline === "accenture" ? null : "accenture"
-                    )
-                  }
-                >
-                  {expandedTimeline === "accenture"
-                    ? "Hide Timeline"
-                    : "View Timeline"}
-                </button>
-                {expandedTimeline === "accenture" && (
-                  <Timeline entries={experience.accenture} />
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Infosys Accordion */}
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="headingTwo">
-              <button
-                className={`accordion-button ${openSection === "infosys" ? "" : "collapsed"}`}
-                type="button"
-                onClick={() => toggleSection("infosys")}
-              >
-                Infosys – Sr. Software Engineer
-              </button>
-            </h2>
-            <div className={`accordion-collapse collapse ${openSection === "infosys" ? "show" : ""}`}>
-              <div className="accordion-body">
-                <button
-                  className="btn btn-sm btn-outline-primary mb-3"
-                  onClick={() =>
-                    setExpandedTimeline(
-                      expandedTimeline === "infosys" ? null : "infosys"
-                    )
-                  }
-                >
-                  {expandedTimeline === "infosys"
-                    ? "Hide Timeline"
-                    : "View Timeline"}
-                </button>
-                {expandedTimeline === "infosys" && (
-                  <Timeline entries={experience.infosys} />
-                )}
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Accenture Experience</Accordion.Header>
+            <Accordion.Body>
+              <ul>
+                <li><strong>Employee Connect Portal –</strong> (Jul 2021 – Nov 2021)</li>
+                <ul>
+                  <li>Built responsive SPA with ReactJS and MUI.</li>
+                  <li>Integrated SharePoint for large dataset UIs.</li>
+                  <li>Delivered custom tables and UI components.</li>
+                </ul>
+                <li><strong>SkillNavigator –</strong> (Nov 2021 – Apr 2022)</li>
+                <ul>
+                  <li>Managed user certification scheduling UI.</li>
+                  <li>Developed complex date/time logic in TypeScript.</li>
+                  <li>Collaborated on UX and mentored juniors.</li>
+                </ul>
+                <li><strong>B2B Activity Dashboard –</strong> (May 2022 – Nov 2022)</li>
+                <ul>
+                  <li>Built dashboard app with Redux for state.</li>
+                  <li>Handled real-time API integration and UI updates.</li>
+                  <li>Wrote unit tests and optimized performance.</li>
+                </ul>
+                <li><strong>ToolTip –</strong> (Feb 2023 – Aug 2023)</li>
+                <ul>
+                  <li>Built reusable UI components for legacy upgrade.</li>
+                  <li>Led frontend migration with vanilla JS and CSS.</li>
+                  <li>Implemented accessibility and UX parity.</li>
+                </ul>
+                <li><strong>SharePoint Front-End – Avanade –</strong> (Mar 2024 – Present)</li>
+                <ul>
+                  <li>Led React-based UI dev for Microsoft migrations.</li>
+                  <li>Enhanced accessibility and responsiveness.</li>
+                  <li>Developed pixel-perfect replicas and new features.</li>
+                </ul>
+              </ul>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </Container>
     </section>
   );
-}
+};
 
 export default Experience;

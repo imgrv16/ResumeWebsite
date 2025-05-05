@@ -1,0 +1,16 @@
+.dashboard-section {
+    background-color: #f4f4f4;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-5px);
+  }
+  
