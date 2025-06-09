@@ -33,7 +33,7 @@ const About = () => {
               className="p-4 rounded shadow-lg bg-white"
               style={{ height: "100%", borderRadius: "1rem" }}
             >
-              <h5 className="mb-3 fw-semibold">Live Demo Components</h5>
+              <h5 className="mb-3 fw-semibold ">Live Demo Components</h5>
               <ListGroup variant="flush">
                 {liveDemoLinks.map((item, idx) => (
                   <ListGroup.Item key={idx} className="border-0 ps-0">
