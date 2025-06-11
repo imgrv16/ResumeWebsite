@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React , {useEffect} from "react";
+import { BrowserRouter as Router, Routes, Route , } from "react-router-dom";
 import CustomNavbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -16,6 +16,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App = () => {
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      const toggler = document.querySelector(".navbar-toggler");
+      const collapse = document.querySelector(".navbar-collapse");
+  
+      if (
+        collapse &&
+        collapse.classList.contains("show") &&
+        !collapse.contains(event.target) &&
+        !toggler.contains(event.target)
+      ) {
+        toggler.click();
+      }
+    }
+  
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
   return (
     <Router>
       <CustomNavbar />

@@ -120,7 +120,7 @@ body.bg-dark .glass-card,
 body.bg-dark .skill-card,
 body.bg-dark .accordion-button {
   background-color: rgba(40, 40, 40, 0.6);
-  color: #fff;
+  /* color: #fff; */
 }
 
 body.bg-dark .accordion-body,
@@ -186,6 +186,7 @@ body.bg-dark .form-label {
 
   .hero-text {
     text-align: center;
+    color: black !important;
   }
 
   .project-card,
