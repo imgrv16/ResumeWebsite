@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
+import AudioPlayer from "./AudioPlayer";
 
 const CustomNavbar = ({ toggleTheme, isDark }) => {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const audioRef = useRef(null);
 
   const handleScroll = () => {
     const sections = document.querySelectorAll("section[id]");
@@ -19,10 +21,22 @@ const CustomNavbar = ({ toggleTheme, isDark }) => {
     setScrolled(window.scrollY > 20);
   };
 
+  // Stop audio on resize to mobile
+  const handleResize = () => {
+    if (window.innerWidth <= 1024 && audioRef.current) {
+      audioRef.current.pause();
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
     document.documentElement.style.scrollBehavior = "smooth";
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -46,8 +60,8 @@ const CustomNavbar = ({ toggleTheme, isDark }) => {
         </motion.a>
 
         <Navbar.Toggle aria-controls="main-navbar" />
-        <Navbar.Collapse id="main-navbar">
-          <Nav className="ms-auto">
+        <Navbar.Collapse id="main-navbar" className="justify-content-end">
+          <Nav className="align-items-center">
             {[
               "hero",
               "about",
@@ -56,7 +70,7 @@ const CustomNavbar = ({ toggleTheme, isDark }) => {
               "experience",
               "education",
               "contact",
-              "dashboard"
+              "dashboard",
             ].map((link) => (
               <Nav.Link
                 key={link}
@@ -69,14 +83,20 @@ const CustomNavbar = ({ toggleTheme, isDark }) => {
                 {link.charAt(0).toUpperCase() + link.slice(1)}
               </Nav.Link>
             ))}
+
             <Button
               variant="outline-light"
               onClick={toggleTheme}
-              className="ms-3"
+              className="ms-3 me-2"
               title="Toggle Theme"
             >
               {isDark ? "☀️" : "🌙"}
             </Button>
+
+            {/* Audio Player (Ref passed in for control) */}
+            <div className="d-none d-lg-flex">
+              <AudioPlayer audioRef={audioRef} />
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
